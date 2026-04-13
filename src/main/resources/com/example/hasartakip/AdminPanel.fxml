@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hasartakip.AdminPanelController" style="-fx-background-color: #0f1c2e;">
+
+    <!--Üst çizgi-->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #0b1523;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="12" bottom="10" left="12" />
+            </padding>
+            <children>
+                <Label text="Admin Paneli" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="18" />
+                    </font>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button text="Yenile" onAction="#handleYenile" />
+                <Button text="Çıkış" onAction="#handleCikis" />
+            </children>
+        </HBox>
+    </top>
+
+    <!--Orta kısım-->
+    <center>
+        <HBox spacing="12" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12" />
+            </padding>
+
+            <!--kayıt listesi -->
+            <VBox spacing="10" prefWidth="360" style="-fx-background-color: white; -fx-background-radius: 12;">
+                <padding>
+                    <Insets top="12" right="12" bottom="12" left="12" />
+                </padding>
+                <children>
+                    <Label text="Kayıtlar" textFill="#0f1c2e">
+                        <font><Font name="System Bold" size="14" /></font>
+                    </Label>
+                    <TableView fx:id="tblKayitlar" prefHeight="520">
+                        <columns>
+                            <TableColumn fx:id="colPlaka" text="Plaka" prefWidth="85" />
+                            <TableColumn fx:id="colDosya" text="Dosya No" prefWidth="95" />
+                            <TableColumn fx:id="colDurum" text="Durum" prefWidth="95" />
+                            <TableColumn fx:id="colSahip" text="Sahip" prefWidth="150" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <children>
+                            <Button text="Yeni Kayıt" onAction="#handleYeniKayit" />
+                            <Button text="Sil" onAction="#handleSil" />
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+            <!--sağ taraf-->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 12;">
+                <padding>
+                    <Insets top="12" right="12" bottom="12" left="12" />
+                </padding>
+                <children>
+                    <Label text="Kayıt Detayı" textFill="#0f1c2e">
+                        <font><Font name="System Bold" size="14" /></font>
+                    </Label>
+
+                    <GridPane hgap="10" vgap="8">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="20" />
+                            <ColumnConstraints percentWidth="30" />
+                            <ColumnConstraints percentWidth="20" />
+                            <ColumnConstraints percentWidth="30" />
+                        </columnConstraints>
+                        <children>
+                            <Label text="Plaka" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtPlaka" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            <Label text="T.C" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtTc" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+
+                            <Label text="Şasi" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtSasi" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            <Label text="Sahip" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtSahip" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+
+                            <Label text="Telefon" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtTelefon" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            <Label text="Marka" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtMarka" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+
+                            <Label text="Model" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtModel" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                            <Label text="Yıl" GridPane.rowIndex="3" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtYil" GridPane.rowIndex="3" GridPane.columnIndex="3" />
+
+                            <Label text="Tescil" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtTescil" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                            <Label text="Dosya No" GridPane.rowIndex="4" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtDosya" GridPane.rowIndex="4" GridPane.columnIndex="3" />
+
+                            <Label text="İhbar" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtIhbar" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                            <Label text="Servis" GridPane.rowIndex="5" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtServis" GridPane.rowIndex="5" GridPane.columnIndex="3" />
+
+                            <Label text="Eksper" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtEksper" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                            <Label text="Durum" GridPane.rowIndex="6" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtDurum" GridPane.rowIndex="6" GridPane.columnIndex="3" />
+
+                            <Label text="Hasar" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+                            <TextField fx:id="txtHasar" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+                            <Label text="Muafiyet" GridPane.rowIndex="7" GridPane.columnIndex="2" />
+                            <TextField fx:id="txtMuafiyet" GridPane.rowIndex="7" GridPane.columnIndex="3" />
+                        </children>
+                    </GridPane>
+
+                    <Label text="Açıklama" />
+                    <TextArea fx:id="txtAciklama" prefRowCount="3" wrapText="true" />
+
+                    <Separator />
+
+                    <Label text="Parçalar / İşlemler" textFill="#0f1c2e">
+                        <font><Font name="System Bold" size="13" /></font>
+                    </Label>
+
+                    <HBox spacing="10">
+                        <children>
+                            <TextField fx:id="txtParcaAdi" promptText="Parça Adı" />
+                            <TextField fx:id="txtParcaDurum" promptText="Durum (Değişim/Onarım...)" />
+                            <TextField fx:id="txtParcaTur" promptText="Tür (Orijinal/Yan Sanayi...)" />
+                            <Button text="Ekle" onAction="#handleParcaEkle" />
+                            <Button text="Sil" onAction="#handleParcaSil" />
+                        </children>
+                    </HBox>
+
+                    <TableView fx:id="tblParcalar" prefHeight="170">
+                        <columns>
+                            <TableColumn fx:id="colParcaAdi" text="Parça" prefWidth="220" />
+                            <TableColumn fx:id="colParcaDurum" text="Durum" prefWidth="160" />
+                            <TableColumn fx:id="colParcaTur" text="Tür" prefWidth="160" />
+                        </columns>
+                    </TableView>
+
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <children>
+                            <Button text="Kaydet / Güncelle" onAction="#handleKaydetGuncelle" />
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

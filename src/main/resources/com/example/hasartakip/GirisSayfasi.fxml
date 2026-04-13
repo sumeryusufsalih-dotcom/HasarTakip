@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #0f1c2e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hasartakip.GirisSayfasiController">
+    <children>
+        <VBox alignment="CENTER" layoutX="148.0" layoutY="20.0" maxWidth="405.0" prefHeight="460.0" prefWidth="405.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15;" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="147.0">
+            <effect><DropShadow color="#00000066" radius="15.0" spread="0.2" /></effect>
+            <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+            <children>
+                <Label text="HASAR TAKİP SİSTEMİ" textFill="#0f1c2e"><font><Font name="Segoe UI Bold" size="20.0" /></font></Label>
+                <Separator prefWidth="200.0" />
+                <Label text="Müşteri Sorgulama Ekranı" textFill="#7f8c8d"><font><Font size="13.0" /></font></Label>
+
+                <VBox spacing="10.0" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Araç Plakası" textFill="#0f1c2e"><font><Font name="System Bold" size="12.0" /></font></Label>
+                        <TextField fx:id="txtPlaka" promptText="Örn: 34ABC123" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" />
+
+                        <Label text="T.C. Kimlik Numarası" textFill="#0f1c2e"><font><Font name="System Bold" size="12.0" /></font></Label>
+                        <TextField fx:id="txtTC" promptText="11 Haneli T.C. No" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" />
+
+                        <Label text="Hasar Kayıt No" textFill="#0f1c2e"><font><Font name="System Bold" size="12.0" /></font></Label>
+                        <TextField fx:id="txtHasarNo" promptText="Dosya No (2024/001)" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" />
+                    </children>
+                </VBox>
+
+                <Button fx:id="btnSorgula" maxWidth="Infinity" onAction="#handleSorgulaBtn" style="-fx-background-color: #0f1c2e; -fx-text-fill: white; -fx-cursor: hand;" text="DURUMU SORGULA">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                </Button>
+            </children>
+        </VBox>
+        <Hyperlink fx:id="linkAdmin" layoutX="550.0" layoutY="460.0" onAction="#handleAdminLink" text="Admin Girişi" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+    </children>
+</AnchorPane>
